@@ -330,10 +330,10 @@ obs_stats = s.calc([obs])
 
 seed_inf = 1
 
-pilot_samples = 2000
+pilot_samples = 1000
 
 # training schedule
-n_train = 2000
+n_train = 1000
 n_rounds = 1
 
 # fitting setup
@@ -384,4 +384,6 @@ prior_lims = np.concatenate((prior_min.reshape(-1,1),prior_max.reshape(-1,1)),ax
 
 posterior_samples = posterior[0].gen(10000)
 
-print(f"\n\n\nScore: {posterior_samples}\n\n\n")
+posterior_samples = np.array(posterior_samples)
+
+print(f"\n\n\nScore: {np.mean(posterior_samples, axis = 0)[1]}\n\n\n")
