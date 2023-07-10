@@ -55,7 +55,7 @@ install:
   - pip3 install -r requirements.txt
 
 script:
-  - travis_wait 60 python3 example.py || travis_wait 30 python example.py
+  - travis_wait 80 python3 example.py || travis_wait 80 python example.py
 
 after_success:
   - echo "Successfull."
