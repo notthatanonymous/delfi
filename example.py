@@ -319,8 +319,6 @@ g = dg.Default(model=m, prior=prior, summary=s)
 #     m.append(HodgkinHuxley(I, dt, V0=V0, seed=seeds_m[i]))
 # g = dg.MPGenerator(models=m, prior=prior, summary=s)
 
-g = dg.Default(model = m, prior = prior, summary = 2)
-
 # true parameters and respective labels
 true_params = np.array([50., 5.])       
 labels_params = [r'$g_{Na}$', r'$g_{K}$']
