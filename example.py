@@ -1,7 +1,5 @@
 import numpy as np
 
-import psutil
-
 def syn_current(duration=120, dt=0.01, t_on = 10,
                 curr_level = 5e-4, seed=None):
     t_offset = 0.
@@ -313,7 +311,7 @@ m = HodgkinHuxley(I, dt, V0=V0, seed=seed_m)
 s = HodgkinHuxleyStats(t_on=t_on, t_off=t_off, n_mom=n_mom, n_summary=n_summary)
 g = dg.Default(model=m, prior=prior, summary=s)
 
-n_processes = psutil.cpu_count()
+n_processes = 1
 
 seeds_m = np.arange(1,n_processes+1,1)
 m = []
