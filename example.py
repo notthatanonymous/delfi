@@ -326,7 +326,7 @@ true_params = np.array([50., 5.])
 labels_params = [r'$g_{Na}$', r'$g_{K}$']
 
 # observed data: simulation given true parameters
-obs = m[0].gen_single(true_params)
+obs = m.gen_single(true_params)
 
 obs_stats = s.calc([obs])
 
