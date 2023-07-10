@@ -311,13 +311,15 @@ m = HodgkinHuxley(I, dt, V0=V0, seed=seed_m)
 s = HodgkinHuxleyStats(t_on=t_on, t_off=t_off, n_mom=n_mom, n_summary=n_summary)
 g = dg.Default(model=m, prior=prior, summary=s)
 
-n_processes = 1
+# n_processes = 1
 
-seeds_m = np.arange(1,n_processes+1,1)
-m = []
-for i in range(n_processes):
-    m.append(HodgkinHuxley(I, dt, V0=V0, seed=seeds_m[i]))
-g = dg.MPGenerator(models=m, prior=prior, summary=s)
+# seeds_m = np.arange(1,n_processes+1,1)
+# m = []
+# for i in range(n_processes):
+#     m.append(HodgkinHuxley(I, dt, V0=V0, seed=seeds_m[i]))
+# g = dg.MPGenerator(models=m, prior=prior, summary=s)
+
+g = dg.Default(model = m, prior = prior, summary = 2)
 
 # true parameters and respective labels
 true_params = np.array([50., 5.])       
